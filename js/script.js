@@ -47,7 +47,7 @@ This function will create and insert/append the elements needed for the paginati
 */
 
 function addPagination(list) {
-   var numOfPages = Math.ceil(list.length / 9)
+   var numOfPages = Math.ceil(list.length / 9);
    var linkList = document.querySelector('ul.link-list');
    linkList.innerHTML = '';
    for (i=1;i<=numOfPages.length;i++){
@@ -67,6 +67,5 @@ function addPagination(list) {
       };
  };
 
-// Call functions
 addPagination(data);
 showPage(data, 1);
