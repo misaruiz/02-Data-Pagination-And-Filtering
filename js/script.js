@@ -38,7 +38,7 @@ function showPage(list, page){
          studentList.insertAdjacentHTML('beforeend', studentItem);
       }
    }
-}
+};
 
 
 /*
@@ -53,17 +53,18 @@ function addPagination(list) {
    for (i=1;i<=numOfPages;i++){
       let button = `<li><button type="button">${i}</button></li>`;
       linkList.insertAdjacentHTML('beforeend', button);
-      var activeButton =  document.querySelector('.button:first-child');
+      var activeButton =  document.querySelector('button');
       activeButton.className = 'active';
       linkList.addEventListener("click", (e) => {
          if (e.target.tagName === 'BUTTON') {
-            activeButton = document.querySelector('.active');
-            activeButton.className = '';
+            var deactiveButton = document.querySelector('.active');
+            deactiveButton.className = '';
+            e.target.className = 'active';
             showPage(data, e.target.textContent);
          };
       });
    };
- }
+ };
 
 addPagination(data);
 showPage(data, 1);
