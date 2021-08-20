@@ -58,10 +58,10 @@ function addPagination(list) {
          if (e.target.tagName === 'BUTTON') {
             document.querySelector('.active').className = '';
             showPage(data, e.target.textContent);
-         }
+         };
       });
-      };
- };
+   };
+ }
 
 addPagination(data);
 showPage(data, 1);
