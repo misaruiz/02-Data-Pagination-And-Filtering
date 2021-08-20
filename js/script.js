@@ -52,11 +52,13 @@ function addPagination(list) {
    linkList.innerHTML = '';
    for (i=1;i<=numOfPages;i++){
       let button = `<li><button type="button">${i}</button></li>`;
-      linkList.insertAdjacentHTML('beforeend', button); 
-      document.querySelector('.button:first-child').className = 'active';
+      linkList.insertAdjacentHTML('beforeend', button);
+      var activeButton =  document.querySelector('.button:first-child');
+      activeButton.className = 'active';
       linkList.addEventListener("click", (e) => {
          if (e.target.tagName === 'BUTTON') {
-            document.querySelector('.active').className = '';
+            activeButton = document.querySelector('.active');
+            activeButton.className = '';
             showPage(data, e.target.textContent);
          };
       });
