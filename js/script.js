@@ -47,13 +47,13 @@ This function will create and insert/append the elements needed for the paginati
 */
 
 function addPagination(list) {
-   var numOfPages = Math.ceil(list.length/9);
-   var linkList = document.querySelector('ul.link-list');
+   let numOfPages = Math.ceil(list.length/9);
+   const linkList = document.querySelector('ul.link-list');
    linkList.innerHTML = '';
    for (i=1;i<=numOfPages;i++){
-      var button = `<li><button type="button">${i}</button></li>`;
+      let button = `<li><button type="button">${i}</button></li>`;
       linkList.insertAdjacentHTML('beforeend', button); 
-      document.querySelector('.button:first').className = 'active';
+      document.querySelector('.button:first-child').className = 'active';
       linkList.addEventListener("click", (e) => {
          if (e.target.tagName === 'BUTTON') {
             document.querySelector('.active').className = '';
