@@ -57,7 +57,7 @@ function addPagination(list) {
       linkList.addEventListener("click", (e) => {
          if (e.target.tagName === 'BUTTON') {
             document.querySelector('.active').className = '';
-            showPage(data, e.target.textCOntent);
+            showPage(data, e.target.textContent);
          }
       });
       };
