@@ -51,14 +51,10 @@ function addPagination(list) {
    var linkList = document.querySelector('ul.link-list');
    linkList.innerHTML = '';
    for (i=1;i<=numOfPages;i++){
-      const button = `
-      <li>
-         <button type="button">${i}</button>
-      </li>`;
-
+      var button = `<li><button type="button">${i}</button></li>`;
       linkList.insertAdjacentHTML('beforeend', button); 
       document.querySelector('.button:first').className = 'active';
-      link-list.addEventListener("click", (e) => {
+      linkList.addEventListener("click", (e) => {
          if (e.target.tagName === 'BUTTON') {
             document.querySelector('.active').className = '';
             showPage(data, e.target.textCOntent);
